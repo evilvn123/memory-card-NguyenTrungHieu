@@ -8,7 +8,7 @@ type BoardProps = {
 };
 
 const Board = (props: BoardProps) => {
-  const { cards } = props;
+  const { cards } = props;  
   const [openCards, setOpenCards] = useState<Array<number>>([]);
   const [clearedCards, setClearedCards] = useState<Array<number>>([]);
   const [shouldDisableAllCards, setShouldDisableAllCards] =

@@ -18,16 +18,17 @@ const Card = (props: CardProps) => {
 
   return (
     <div
+      data-testid="card"
       className={classnames("card", {
         "is-flipped": isFlipped,
       })}
       onClick={handleClick}
     >
       <div className="card-face">
-        <img src={backSide} alt="card backside" />
+        <img data-testid="front-face" src={backSide} alt="card backside" />
       </div>
       <div className="card-face card-back-face">
-        <img src={image} alt="card" />
+        <img data-testid="back-face" src={image} alt="card" />
       </div>
     </div>
   );
