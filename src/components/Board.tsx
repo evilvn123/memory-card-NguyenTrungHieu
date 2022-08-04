@@ -8,7 +8,7 @@ type BoardProps = {
 };
 
 const Board = (props: BoardProps) => {
-  const { cards } = props;  
+  const { cards } = props;
   const [openCards, setOpenCards] = useState<Array<number>>([]);
   const [clearedCards, setClearedCards] = useState<Array<number>>([]);
   const [shouldDisableAllCards, setShouldDisableAllCards] =
@@ -42,12 +42,11 @@ const Board = (props: BoardProps) => {
   };
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout = setTimeout(() => {});
     if (openCards.length === 2) {
-      timeout = setTimeout(evaluate, 500);
+      timeout.current = setTimeout(evaluate, 500);
     }
     return () => {
-      clearTimeout(timeout);
+      clearTimeout(timeout.current);
     };
   }, [openCards]);
 
